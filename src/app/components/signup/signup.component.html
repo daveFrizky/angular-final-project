@@ -1,0 +1,32 @@
+<div class="auth-wrapper w-25 mx-auto">
+    <form  [formGroup]="signupForm" (ngSubmit)="registerUser()">
+        <h3 class="h3 mb-3 font-weight-normal text-center p-3">Sign Up</h3>
+        <div class="form-group mt-3">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username" placeholder="Enter Username" required>
+            <span style="color: red;"
+                *ngIf="username && username.touched && username.invalid">
+                Username is required. Min length is 5
+            </span>
+        </div>
+        <div class="form-group mt-3">
+            <label>Email address</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+            <span style="color: red;"
+                *ngIf="email && email.touched && email.invalid">
+                Email is required. Must input email type
+            </span>
+        </div>
+        <div class="form-group mt-3">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password" required>
+            <span style="color: red;"
+                *ngIf="password && password.touched && password.invalid">
+                *required. Min length is 5. Contain at least 1 Uppercase, 1 Number, 1 symbol
+            </span>
+        </div>
+        <div class="text-center">
+            <button type="submit " class="btn btn-block btn-primary mt-3 mx-auto">Sign up</button>
+        </div>
+    </form>
+</div>

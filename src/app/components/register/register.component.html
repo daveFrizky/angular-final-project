@@ -1,0 +1,33 @@
+
+<div class="container-fluid w-50 mt-5">
+    <table class="table shadow-sm mb-1 bg-white rounded ">
+    <thead style="border-style: hidden;">
+        <tr style="color: gray;">
+        <th scope="col" >Card Owner</th>
+        <th scope="col" >Card Number</th>
+        <th scope="col" >Exp. Date</th>
+        <th scope="col" >Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let i of payments;">
+        <td>{{i.cardOwnerName}}</td>
+        <td>{{i.cardNumber}}</td>
+        <td>{{i.expirationDate}}</td>
+        <td>
+            <i class="bi bi-pencil btn p-0 m-0" (click)="Edit(i.paymentDetailId)"></i> |
+            <i class="bi bi-trash btn p-0 m-0" style="color:red" (click)="Remove(i.paymentDetailId)"></i>
+        </td>
+        </tr>
+
+    </tbody>
+    </table>
+    <div class="d-grid justify-content-md-end">
+        <button class="btn btn-outline-primary mt-lg-1" (click)="ShowAdd()"><i class="bi bi-plus"></i>Add Payment Details</button>
+    </div>
+</div>
+
+<div class="container-fluid w-25 mt-lg-3" *ngIf="showForm">
+    <app-form-payment [dataPayment]="dataPayment"></app-form-payment>
+</div>

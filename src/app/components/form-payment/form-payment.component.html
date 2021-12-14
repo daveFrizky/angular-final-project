@@ -1,0 +1,41 @@
+<form [formGroup]="PForm" >
+    <div class="form-group p-1">
+        <label>Card Owner Name</label>
+        <input type="text" class="form-control" formControlName="cardOwnerName"
+            placeholder="Full Name" required />
+        <span style="color: red" *ngIf="cardOwnerName && cardOwnerName.touched && cardOwnerName.invalid">
+            *required. Min lenght 5
+        </span>
+    </div>
+    <div class="form-group p-1">
+        <label>Card Number</label>
+        <input type="text" class="form-control" formControlName="cardNumber" placeholder="16 Digit Card Number" maxlength="16"
+            required />
+        <span style="color: red" *ngIf="cardNumber && cardNumber.touched && cardNumber.invalid">
+            *required. 16 Digit Numbers Only
+        </span>
+    </div>
+    <div class="form-group p-1">
+        <div class="row">
+            <div class="col ">
+                <label>Security Code</label>
+                <input type="password" class="form-control" formControlName="securityCode"
+                    placeholder="Security Code" maxlength="6" required />
+                <span style="color: red" *ngIf="securityCode && securityCode.touched && securityCode.invalid">
+                    *required 
+                </span>
+            </div>
+            <div class="col ">
+                <label>Valid Through</label>
+                <input type="text" class="form-control" formControlName="expirationDate"
+                    placeholder="MM/YY" maxlength="5" required />
+                <span style="color: red" *ngIf="expirationDate && expirationDate.touched && expirationDate.invalid">
+                    *required. MM/YY
+                </span>
+            </div>
+        </div>       
+    </div>
+    <div class="d-grid">
+        <button class="btn btn-primary mt-lg-2 m-sm-1" type="submit" (click)="submitHandler()">Submit</button>
+      </div>
+</form>

@@ -1,0 +1,24 @@
+<div class="auth-wrapper w-25 mx-auto">
+    <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="signIn()">
+        <h3 class="h3 mb-3 font-weight-normal text-center p-3">Sign In</h3>
+        <div class="form-group mt-3">
+            <label>Email address</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+            <span style="color: red;"
+                *ngIf="email && email.touched && email.invalid">
+                Email is required. Must input email type
+            </span>
+        </div>
+        <div class="form-group mt-3">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password" required>
+            <span style="color: red;"
+                *ngIf="password && password.touched && password.invalid">
+                Password is required. Min length is 5
+            </span>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-block btn-primary mt-3" (click)="signIn()" >Sign in</button>
+        </div>
+    </form>
+</div>
