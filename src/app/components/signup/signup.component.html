@@ -3,7 +3,7 @@
         <h3 class="h3 mb-3 font-weight-normal text-center p-3">Sign Up</h3>
         <div class="form-group mt-3">
             <label>Username</label>
-            <input type="text" class="form-control" formControlName="username" placeholder="Enter Username" required>
+            <input type="text" class="form-control" formControlName="username" placeholder="Enter Username" autofocus required>
             <span style="color: red;"
                 *ngIf="username && username.touched && username.invalid">
                 Username is required. Min length is 5
@@ -26,7 +26,7 @@
             </span>
         </div>
         <div class="text-center">
-            <button type="submit " class="btn btn-block btn-primary mt-3 mx-auto">Sign up</button>
+            <button type="submit " class="btn btn-block btn-primary mt-3 mx-auto" [disabled]="!signupForm.valid">Sign up</button>
         </div>
     </form>
 </div>

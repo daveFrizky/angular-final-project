@@ -18,7 +18,7 @@
             </span>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-block btn-primary mt-3" (click)="signIn()" >Sign in</button>
+            <button type="submit" class="btn btn-block btn-primary mt-3" (click)="signIn()" [disabled]="!signinForm.valid">Sign in</button>
         </div>
     </form>
 </div>
