@@ -12,7 +12,7 @@ const app=express();
 app.use(express.static('dist/PaymentApp'));
 
 app.get('/*',(req,res)=>
-    res.sendFile('index.html',{root:'dist/PaymentApp/'}),);
+    res.sendFile('index.html',{root:'dist/PaymentApp'}),);
 
 const port=process.env.PORT || 8000
 app.listen(port,()=> {
