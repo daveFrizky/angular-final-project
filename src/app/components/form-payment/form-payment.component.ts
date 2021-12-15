@@ -38,7 +38,7 @@ export class FormPaymentComponent implements OnInit {
   AddPayment(){
     this.service.addPayment(this.PForm.value)
     .subscribe((res:any)=>{
-      location.reload();
+      location.reload();      
     })
   }
 
@@ -66,6 +66,7 @@ export class FormPaymentComponent implements OnInit {
       this.cardNumber?.setValue(this.dataPayment.cardNumber)
       this.cardOwnerName?.setValue(this.dataPayment.cardOwnerName)
       this.expirationDate?.setValue(this.dataPayment.expirationDate)
+      this.securityCode?.setValue(this.dataPayment.securityCode)
     }
   }
 }
